@@ -1,0 +1,47 @@
+{
+  "name": "@topmarksdevelopment/javascript-logger",
+  "description": "A compact tool to help log messages/errors in your javascript code",
+  "author": "TopMarksDevelopment",
+  "version": "1.0.0",
+  "preview": true,
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "keywords": [
+    "JavaScript Logger",
+    "JS Logger",
+    "vanilla js logger",
+    "JavaScript Logging",
+    "JS Logging",
+    "vanilla js logging"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TopMarksDevelopment/JavaScript.Logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TopMarksDevelopment/JavaScript.Logger/issues"
+  },
+  "homepage": "https://github.com/TopMarksDevelopment/JavaScript.Logger#readme",
+  "files": [
+    "lib/**",
+    "package-lock.json",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint ./src --ext .ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {}
+}
