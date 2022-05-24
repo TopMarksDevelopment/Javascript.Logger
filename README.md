@@ -14,12 +14,14 @@ Then provide the body for the two functions and also the 'type' for the `extraDe
 ```TS
 interface ExtraInfo {
     error?: unknown
+    logLevelForNow?: LogLevel
 }
 
 class MyLogger extends JavascriptLogger<ExtraInfo> {
-	logLevel = (): LogLevel => LogLevel.warn;
+	logLevel = (extraDetails?: ExtraInfo): LogLevel => 
+        extraDetails?.logLevelForNow ?? LogLevel.warn;
 
-	logIt = (logLevel: LogLevel, title: string, message?: string | string[], extraDetails: ExtraInfo): void => {
+	logIt = (logLevel: LogLevel, title: string, message?: string | string[], extraDetails?: ExtraInfo): void => {
         // consume the information and do stuff
     };
 }
@@ -55,14 +57,14 @@ function thisWillAlwaysWork() {
 
 This specifies the log level to start outputting the messages
 
-**Arguments:** _NONE_  
+**Arguments:** extraDetails?: `T`_(custom type)_    
 **Output:** `LogLevel` (_`critical`, `error`, `warn`, `info`, `debug`, `trace`_)
 
 ### `logIt`
 
 This is the function that is called when a log occurs that meets the minimum log level specified by `logLevel`
 
-**Arguments:** logLevel: `LogLevel`, title: `string`, message?: `string | string[]`, extraDetails: `T`_(custom type)_  
+**Arguments:** logLevel: `LogLevel`, title: `string`, message?: `string | string[]`, extraDetails?: `T`_(custom type)_  
 **Output:** _NONE_
 
 ## Built in components
