@@ -10,7 +10,7 @@ export class ConsoleJavascriptLogger extends JavascriptLogger<object> {
 		this._minimumLevel = logLevel ?? LogLevel.warn;
 	}
 
-	logLevel = (): LogLevel => this._minimumLevel;
+	logLevel = (_extraDetails?: object): LogLevel => this._minimumLevel;
 
 	logIt = (logLevel: LogLevel, title: string, message?: string | string[], extraDetails?: object): void => {
 		switch (logLevel) {

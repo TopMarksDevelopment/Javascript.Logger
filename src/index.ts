@@ -2,10 +2,10 @@ import { LogLevel } from './Enumerators/LogLevel';
 
 export abstract class JavascriptLogger<T> {
 	abstract logIt(logLevel: LogLevel, title: string, message?: string | string[], extraDetails?: T): void;
-	abstract logLevel(): LogLevel;
+	abstract logLevel(extraDetails?: T): LogLevel;
 
 	log = (logLevel: LogLevel, title: string, message?: string[] | string, extraDetails?: T): void => {
-		if (logLevel <= this.logLevel()) {
+		if (logLevel <= this.logLevel(extraDetails)) {
 			this.logIt(logLevel, title, message, extraDetails);
 		}
 	};
