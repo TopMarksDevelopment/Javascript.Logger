@@ -2,7 +2,7 @@
   "name": "@topmarksdevelopment/javascript-logger",
   "description": "A compact tool to help log messages/errors in your javascript code",
   "author": "TopMarksDevelopment",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "preview": true,
   "license": "MIT",
   "main": "lib/index.js",
